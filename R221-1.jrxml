@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-07-02T19:08:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="R221-1" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="148e7e3f-020c-4292-aa74-9ac0f14eda48">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mysql221"/>
+	<parameter name="orden" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from cliente order by  $P!{orden} ]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="190" height="30" uuid="490f9de6-b933-4ab3-b5e7-4965e177dcf7"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Reporte de Clientes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="40" width="570" height="30" uuid="6f7368b3-e839-44a9-9d29-a12450f95b81"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="100" height="16" uuid="225b52e5-54e8-4a13-9b36-372d10e21b5f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="6" width="100" height="16" uuid="362cf89e-7e14-4876-bb0c-e925c3d777ab"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="100" height="18" uuid="01d854a9-fd34-410a-9ebc-fe6c5be57b5c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="100" height="20" uuid="82e051d0-7042-4651-9e93-b88d467c609d"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="10" width="100" height="20" uuid="18ee30ed-9101-4ce9-9248-26b90966b3ad"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="370" y="10" width="100" height="20" uuid="7029095e-c13f-4950-88b0-e6b18e8351bf"/>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
